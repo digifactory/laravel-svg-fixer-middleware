@@ -1,11 +1,11 @@
-# Very short description of the package
+# Fixing possible invalid SVG files
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/digifactory/laravel-svg-fixer.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-svg-fixer)
-[![Build Status](https://img.shields.io/travis/digifactory/laravel-svg-fixer/master.svg?style=flat-square)](https://travis-ci.org/digifactory/laravel-svg-fixer)
-[![Quality Score](https://img.shields.io/scrutinizer/g/digifactory/laravel-svg-fixer.svg?style=flat-square)](https://scrutinizer-ci.com/g/digifactory/laravel-svg-fixer)
-[![Total Downloads](https://img.shields.io/packagist/dt/digifactory/laravel-svg-fixer.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-svg-fixer)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/digifactory/laravel-svg-fixer-middleware.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-svg-fixer-middleware)
+[![Build Status](https://img.shields.io/travis/digifactory/laravel-svg-fixer-middleware/master?style=flat-square)](https://travis-ci.org/digifactory/laravel-svg-fixer-middleware)
+[![Quality Score](https://img.shields.io/scrutinizer/g/digifactory/laravel-svg-fixer-middleware/master?style=flat-square)](https://scrutinizer-ci.com/g/digifactory/laravel-svg-fixer-middleware)
+[![Total Downloads](https://img.shields.io/packagist/dt/digifactory/laravel-svg-fixer-middleware.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-svg-fixer-middleware)
 
-Fixes your uploaded SVG files before validating through the common Laravel validation
+Fixes your uploaded SVG files before validating through the common Laravel validation.
 
 ## Installation
 
