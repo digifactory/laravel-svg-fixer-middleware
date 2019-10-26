@@ -2,7 +2,6 @@
 
 namespace DigiFactory\SvgFixer\Tests;
 
-use App\Http\Middleware\CheckUserStatus;
 use DigiFactory\SvgFixer\SvgFixerMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -191,22 +190,22 @@ class SvgFixerMiddlewareTest extends TestCase
 
     protected function createTemporarySvg($filename, $newFilename = null)
     {
-        if (!$newFilename) {
+        if (! $newFilename) {
             $newFilename = $filename;
         }
 
         $finfo = new \finfo(FILEINFO_MIME_TYPE);
 
-        $path = __DIR__ . DIRECTORY_SEPARATOR . 'fixtures' . DIRECTORY_SEPARATOR;
+        $path = __DIR__.DIRECTORY_SEPARATOR.'fixtures'.DIRECTORY_SEPARATOR;
 
-        $tmpPath = __DIR__ . DIRECTORY_SEPARATOR;
+        $tmpPath = __DIR__.DIRECTORY_SEPARATOR;
 
-        copy($path . $filename, $tmpPath . $newFilename);
+        copy($path.$filename, $tmpPath.$newFilename);
 
         return new \Illuminate\Http\UploadedFile(
-            $tmpPath . $newFilename,
+            $tmpPath.$newFilename,
             $newFilename,
-            $finfo->file($tmpPath . $newFilename),
+            $finfo->file($tmpPath.$newFilename),
             null,
             true
         );
