@@ -20,21 +20,26 @@ class SvgFixerMiddleware
             foreach ($request->files as $file) {
                 // Check if uploaded file is an SVG
                 if (Str::startsWith($file->getMimeType(), 'image/svg')) {
-                    $handle = fopen($file->getPathname(), 'r+');
-                    $contents = fread($handle, filesize($file->getPathname()));
-
-                    rewind($handle);
-                    // Check if uploaded file is an SVG with starting XML declaration.
-                    // If not then we add the XML declaration.
-                    if (Str::startsWith($contents, '<svg')) {
-                        fwrite($handle, $this->xmlDeclaration.PHP_EOL.$contents);
-                    }
-
-                    fclose($handle);
+                    $this->handleSVG($file);
                 }
             }
         }
 
         return $next($request);
+    }
+
+    private function handleSVG($file)
+    {
+        $handle = fopen($file->getPathname(), 'r+');
+        $contents = fread($handle, filesize($file->getPathname()));
+
+        rewind($handle);
+        // Check if uploaded file is an SVG with starting XML declaration.
+        // If not then we add the XML declaration.
+        if (Str::startsWith($contents, '<svg')) {
+            fwrite($handle, $this->xmlDeclaration.PHP_EOL.$contents);
+        }
+
+        fclose($handle);
     }
 }
