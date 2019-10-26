@@ -20,7 +20,7 @@ class SvgFixerMiddleware
             foreach ($request->files as $file) {
                 // Check if uploaded file is an SVG
                 if (Str::startsWith($file->getMimeType(), 'image/svg')) {
-                    $this->handleSVG($file);
+                    $this->handleSVGFile($file);
                 }
             }
         }
@@ -28,7 +28,7 @@ class SvgFixerMiddleware
         return $next($request);
     }
 
-    private function handleSVG($file)
+    private function handleSVGFile($file)
     {
         $handle = fopen($file->getPathname(), 'r+');
         $contents = fread($handle, filesize($file->getPathname()));
