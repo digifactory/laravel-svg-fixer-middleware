@@ -5,7 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/digifactory/laravel-svg-fixer.svg?style=flat-square)](https://scrutinizer-ci.com/g/digifactory/laravel-svg-fixer)
 [![Total Downloads](https://img.shields.io/packagist/dt/digifactory/laravel-svg-fixer.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-svg-fixer)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Fixes your uploaded SVG files before validating through the common Laravel validation
 
 ## Installation
 
@@ -26,7 +26,7 @@ class Kernel extends HttpKernel
 {
     protected $middleware = [
         // ...
-        \App\Http\Middleware\SvgFixerMiddleware::class,
+        DigiFactory\SvgFixer\SvgFixerMiddleware::class,
     ];
     
     // ...
