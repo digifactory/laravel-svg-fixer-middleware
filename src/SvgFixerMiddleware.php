@@ -14,25 +14,23 @@ class SvgFixerMiddleware
 
     public function handle(Request $request, Closure $next)
     {
-        if ($request->method() === 'POST') {
-            // Check if request has at least one file
-            if ($request->files->count() > 0) {
-                /** @var UploadedFile $file */
-                foreach ($request->files as $file) {
-                    // Check if uploaded file is an SVG
-                    if (Str::startsWith($file->getMimeType(), 'image/svg')) {
-                        $handle = fopen($file->getPathname(), 'r+');
-                        $contents = fread($handle, filesize($file->getPathname()));
+        // Check if request is a POST request and has at least one file
+        if ($request->method() === 'POST' && $request->files->count() > 0) {
+            /** @var UploadedFile $file */
+            foreach ($request->files as $file) {
+                // Check if uploaded file is an SVG
+                if (Str::startsWith($file->getMimeType(), 'image/svg')) {
+                    $handle = fopen($file->getPathname(), 'r+');
+                    $contents = fread($handle, filesize($file->getPathname()));
 
-                        rewind($handle);
-                        // Check if uploaded file is an SVG with starting XML declaration.
-                        // If not then we add the XML declaration.
-                        if (Str::startsWith($contents, '<svg')) {
-                            fwrite($handle, $this->xmlDeclaration.PHP_EOL.$contents);
-                        }
-
-                        fclose($handle);
+                    rewind($handle);
+                    // Check if uploaded file is an SVG with starting XML declaration.
+                    // If not then we add the XML declaration.
+                    if (Str::startsWith($contents, '<svg')) {
+                        fwrite($handle, $this->xmlDeclaration.PHP_EOL.$contents);
                     }
+
+                    fclose($handle);
                 }
             }
         }
