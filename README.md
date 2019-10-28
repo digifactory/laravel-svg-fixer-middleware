@@ -28,7 +28,7 @@ class Kernel extends HttpKernel
 {
     protected $middleware = [
         // ...
-        DigiFactory\SvgFixer\SvgFixerMiddleware::class,
+        \DigiFactory\SvgFixer\SvgFixerMiddleware::class,
     ];
     
     // ...
