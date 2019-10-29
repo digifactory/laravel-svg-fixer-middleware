@@ -1,4 +1,4 @@
-# Fixing possible invalid SVG files
+# Fix 'invalid' SVG files
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/digifactory/laravel-svg-fixer-middleware.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-svg-fixer-middleware)
 [![MIT Licensed](https://img.shields.io/github/license/digifactory/laravel-svg-fixer-middleware?style=flat-square)](LICENSE.md)
@@ -7,7 +7,7 @@
 [![StyleCI](https://styleci.io/repos/217690645/shield?branch=master)](https://styleci.io/repos/217690645)
 [![Total Downloads](https://img.shields.io/packagist/dt/digifactory/laravel-svg-fixer-middleware.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-svg-fixer-middleware)
 
-Fixes your uploaded SVG files before validating through the common Laravel validation.
+The Laravel `image` validator doesn't validate an SVG if the file is missing the XML declaration on top. This middleware automatically fixes this incorrect SVG files by adding the XML declaration before it is validated.
 
 ## Installation
 
@@ -18,9 +18,7 @@ composer require digifactory/laravel-svg-fixer
 ```
 
 ## Usage
-By default, the middleware filters all post requests for SVG files and simply fixes them for the Laravel validator when not valid. In most cases this will be caused by the missing XML starting declaration.
-
-Simply register the newly created class in your middleware stack.
+Simply register the `SvgFixerMiddleware` class in your middleware stack.
 ``` php
 // app/Http/Kernel.php
 
@@ -34,6 +32,8 @@ class Kernel extends HttpKernel
     // ...
 }
 ```
+
+The middleware only runs for `POST` requests containing SVG files.
 
 ### Testing
 
