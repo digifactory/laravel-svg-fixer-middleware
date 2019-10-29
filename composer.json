@@ -3,15 +3,23 @@
     "description": "Fixes your uploaded SVG files before validating through the common Laravel validation",
     "keywords": [
         "digifactory",
-        "laravel-svg-fixer-middleware"
+        "laravel-svg-fixer-middleware",
+        "laravel",
+        "middleware",
+        "svg"
     ],
     "homepage": "https://github.com/digifactory/laravel-svg-fixer-middleware",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "DigiFactory Webworks",
-            "email": "helpdesk@digifactory.nl",
+            "name": "Maurice Bosch",
+            "email": "maurice@digifactory.nl",
+            "role": "Developer"
+        },
+        {
+            "name": "Mark Jansen",
+            "email": "mark@digifactory.nl",
             "role": "Developer"
         }
     ],
