@@ -7,7 +7,7 @@
 [![StyleCI](https://styleci.io/repos/217690645/shield?branch=master)](https://styleci.io/repos/217690645)
 [![Total Downloads](https://img.shields.io/packagist/dt/digifactory/laravel-svg-fixer-middleware.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-svg-fixer-middleware)
 
-The Laravel `image` validator doesn't validate an SVG if the file is missing the XML declaration on top. This middleware automatically fixes this incorrect SVG files by adding the XML declaration before it is validated.
+The Laravel `image` validator doesn't validate an SVG if the file is missing the XML declaration on top. This middleware automatically fixes these incorrect SVG files by adding the XML declaration before it is validated.
 
 ## Installation
 
