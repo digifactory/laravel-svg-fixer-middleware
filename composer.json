@@ -1,6 +1,6 @@
 {
     "name": "digifactory/laravel-svg-fixer-middleware",
-    "description": "Fixes your uploaded SVG files before validating through the common Laravel validation",
+    "description": "Fixes your uploaded SVG files before validating through the Laravel validator",
     "keywords": [
         "digifactory",
         "laravel-svg-fixer-middleware",
