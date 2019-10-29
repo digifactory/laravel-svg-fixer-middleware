@@ -34,9 +34,10 @@ class SvgFixerMiddleware
         $contents = fread($handle, filesize($file->getPathname()));
 
         rewind($handle);
-        // Check if uploaded file is an SVG with starting XML declaration.
-        // If not then we add the XML declaration.
+
+        // If the file starts with <svg the XML declaration is missing
         if (Str::startsWith($contents, '<svg')) {
+            // Add XML declaration
             fwrite($handle, $this->xmlDeclaration.PHP_EOL.$contents);
         }
 
