@@ -14,7 +14,7 @@ The Laravel `image` validator doesn't validate an SVG if the file is missing the
 You can install the package via composer:
 
 ```bash
-composer require digifactory/laravel-svg-fixer
+composer require digifactory/laravel-svg-fixer-middleware
 ```
 
 ## Usage
