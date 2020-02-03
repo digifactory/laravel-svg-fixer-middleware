@@ -175,7 +175,8 @@ class SvgFixerMiddlewareTest extends TestCase
             'image' => 'required|image',
         ]);
 
-        $this->assertFalse($validator->passes());
+        // $this->assertFalse($validator->passes());
+        // Laravel changed the validation in: https://github.com/laravel/framework/commit/3fb747430d6cbbe3c64e72965de11fd33bb37f3e
 
         $middleware->handle($request, function (Request $request) use ($files, $validatorFactory) {
             $validator = $validatorFactory->make($request->all(), [
