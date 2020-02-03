@@ -19,7 +19,7 @@ class SvgFixerMiddleware
             /** @var UploadedFile $file */
             foreach ($request->files as $file) {
                 // Check if uploaded file is an SVG
-                if (Str::startsWith($file->getMimeType(), 'image/svg')) {
+                if ($file instanceof UploadedFile && Str::startsWith($file->getMimeType(), 'image/svg')) {
                     $this->handleSVGFile($file);
                 }
             }
