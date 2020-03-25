@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-svg-fixer` will be documented in this file
 
+## 1.0.2 - 2020-03-25
+
+- Support Laravel 7.x.
+
 ## 1.0.1 - 2020-02-03
 
 - Updated tests. New Laravel updates changed the validations for SVG files [3fb747430d6cbbe3c64e72965de11fd33bb37f3e](https://github.com/laravel/framework/commit/3fb747430d6cbbe3c64e72965de11fd33bb37f3e)
