@@ -2,7 +2,11 @@
 
 All notable changes to `laravel-svg-fixer` will be documented in this file
 
-## 1.0.4 - 2020-03-25
+## 2.0.0 - 2022-02-23
+- Support for Laravel 9 and PHP 8.1
+- Dropped support for Laravel 7, Laravel 8 and PHP 7.4
+
+## 1.0.4 - 2021-03-25
 - Removed TravisCi
 - Added Github workflow actions
 - Support for PHP 8.0
