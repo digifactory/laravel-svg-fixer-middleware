@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/digifactory/laravel-svg-fixer-middleware.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-svg-fixer-middleware)
 [![MIT Licensed](https://img.shields.io/github/license/digifactory/laravel-svg-fixer-middleware?style=flat-square)](LICENSE.md)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/digifactory/laravel-svg-fixer-middleware/run-php-tests/master)
+[![run-tests](https://github.com/digifactory/laravel-svg-fixer-middleware/actions/workflows/run-php-tests.yml/badge.svg)](https://github.com/digifactory/laravel-svg-fixer-middleware/actions/workflows/run-php-tests.yml)
 [![Quality Score](https://img.shields.io/scrutinizer/g/digifactory/laravel-svg-fixer-middleware/master?style=flat-square)](https://scrutinizer-ci.com/g/digifactory/laravel-svg-fixer-middleware)
 [![StyleCI](https://styleci.io/repos/217690645/shield?branch=master)](https://styleci.io/repos/217690645)
 [![Total Downloads](https://img.shields.io/packagist/dt/digifactory/laravel-svg-fixer-middleware.svg?style=flat-square)](https://packagist.org/packages/digifactory/laravel-svg-fixer-middleware)
