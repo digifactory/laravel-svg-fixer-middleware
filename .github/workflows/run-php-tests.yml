@@ -5,16 +5,18 @@ on:
 jobs:
     php-tests:
         runs-on: ${{ matrix.os }}
-
+        timeout-minutes: 5
         strategy:
             matrix:
                 php: [8.4, 8.3, 8.2]
-                laravel: [12.*, 11.*]
+                laravel: [11.*, 12.*]
                 dependency-version: [prefer-lowest, prefer-stable]
                 os: [ubuntu-latest, windows-latest]
                 include:
-                    - laravel: [12.*, 11.*]
-                      testbench: [10.*, 9.*]
+                    -   laravel: 11.*
+                        testbench: ^9.0
+                    -   laravel: 12.*
+                        testbench: ^10.0
 
         name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
 
