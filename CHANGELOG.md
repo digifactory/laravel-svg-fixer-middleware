@@ -1,9 +1,16 @@
 # Changelog
 
 All notable changes to `laravel-svg-fixer` will be documented in this file
+## 4.1.0 - 2025-04-04
+- Support for Laravel 12 and PHP 8.4
+
+## 4.0.0 - 2024-04-16
+- Support for Laravel 11 and PHP 8.3
+ 
+All notable changes to `laravel-svg-fixer` will be documented in this file
 ## 3.0.0 - 2023-02-20
 - Support for Laravel 10 and PHP 8.2
-- Dropped support for Laravel 9, PHP 8.0 and PHP 8.2
+- Dropped support for Laravel 9, PHP 8.0 and PHP 8.1
 
 ## 2.0.0 - 2022-02-23
 - Support for Laravel 9 and PHP 8.1

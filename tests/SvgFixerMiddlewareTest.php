@@ -15,8 +15,7 @@ class SvgFixerMiddlewareTest extends TestCase
         $this->setUpDummyRoutes();
     }
 
-    /** @test */
-    public function it_not_mutates_request_without_files()
+    public function test_if_it_not_mutates_request_without_files()
     {
         $parameters = [
             'foo' => 'bar',
@@ -34,8 +33,7 @@ class SvgFixerMiddlewareTest extends TestCase
         });
     }
 
-    /** @test */
-    public function it_not_mutates_request_with_files()
+    public function test_if_it_not_mutates_request_with_files()
     {
         $file = UploadedFile::fake()
             ->image('avatar.jpg', 2000, 1500)
@@ -56,8 +54,7 @@ class SvgFixerMiddlewareTest extends TestCase
         });
     }
 
-    /** @test */
-    public function it_mutates_request_with_invalid_svg()
+    public function test_if_it_mutates_request_with_invalid_svg()
     {
         $image = $this->createTemporarySvg('invalid.svg');
 
@@ -84,8 +81,7 @@ class SvgFixerMiddlewareTest extends TestCase
         $this->removeTemporarySvg($image);
     }
 
-    /** @test */
-    public function it_mutates_request_with_multiple_invalid_svgs()
+    public function test_if_it_mutates_request_with_multiple_invalid_svgs()
     {
         $images = [
             $this->createTemporarySvg('invalid.svg', 'invalid1.svg'),
@@ -120,8 +116,7 @@ class SvgFixerMiddlewareTest extends TestCase
         }
     }
 
-    /** @test */
-    public function it_mutates_request_with_multiple_svgs()
+    public function test_if_it_mutates_request_with_multiple_svgs()
     {
         $images = [
             $this->createTemporarySvg('invalid.svg'),
@@ -156,8 +151,7 @@ class SvgFixerMiddlewareTest extends TestCase
         }
     }
 
-    /** @test */
-    public function it_mutates_request_with_invalid_svg_and_validates()
+    public function test_if_it_mutates_request_with_invalid_svg_and_validates()
     {
         $image = $this->createTemporarySvg('invalid.svg');
 
@@ -172,15 +166,12 @@ class SvgFixerMiddlewareTest extends TestCase
         $validatorFactory = $this->app['validator'];
 
         $validator = $validatorFactory->make($request->all(), [
-            'image' => 'required|image',
+            'image' => 'required|image:allow_svg',
         ]);
-
-        // $this->assertFalse($validator->passes());
-        // Laravel changed the validation in: https://github.com/laravel/framework/commit/3fb747430d6cbbe3c64e72965de11fd33bb37f3e
 
         $middleware->handle($request, function (Request $request) use ($validatorFactory) {
             $validator = $validatorFactory->make($request->all(), [
-                'image' => 'required|image',
+                'image' => 'required|image:allow_svg',
             ]);
 
             $this->assertTrue($validator->passes());
