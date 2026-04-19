@@ -1,6 +1,12 @@
 # Changelog
 
 All notable changes to `laravel-svg-fixer` will be documented in this file
+## 5.0.1 - 2025-04-19
+- Patch PHPUnit
+
+## 5.0.0 - 2025-04-08
+- Support for Laravel 13
+
 ## 4.1.0 - 2025-04-04
 - Support for Laravel 12 and PHP 8.4
 
